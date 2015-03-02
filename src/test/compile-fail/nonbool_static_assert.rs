@@ -1,4 +1,4 @@
-// Copyright 2014 The Rust Project Developers. See the COPYRIGHT
+// Copyright 2015 The Rust Project Developers. See the COPYRIGHT
 // file at the top-level directory of this distribution and at
 // http://rust-lang.org/COPYRIGHT.
 //
@@ -8,4 +8,9 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-uint_module!(uint, uint);
+#![allow(dead_code)]
+
+#[static_assert]
+static E: i32 = 1; //~ ERROR can only have static_assert on a static with type `bool`
+
+fn main() {}
